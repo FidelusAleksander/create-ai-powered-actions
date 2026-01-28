@@ -9,7 +9,7 @@ _Build intelligent Javascript based GitHub Actions that leverage GitHub Models._
 - **What you'll build**: A complete AI-powered Javascript based GitHub Action that analyzes and rates jokes
 - **Prerequisites**:
 
-  - We strongly recommend completing the **[write-javascript-actions](https://github.com/skills-dev/write-javascript-actions)** exercise first, as it covers the foundational skills needed for creating JavaScript-based GitHub Actions
+  - We strongly recommend completing the **[write-javascript-actions](https://github.com/skills/write-javascript-actions)** exercise first, as it covers the foundational skills needed for creating JavaScript-based GitHub Actions
 
 - **How long**: This exercise takes less than 1 hour to complete.
 
