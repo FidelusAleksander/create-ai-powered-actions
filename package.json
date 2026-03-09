@@ -6,9 +6,9 @@
     "build": "ncc build src/index.js -o dist"
   },
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^3.0.0",
     "@vercel/ncc": "^0.38.4"
   },
   "devDependencies": {

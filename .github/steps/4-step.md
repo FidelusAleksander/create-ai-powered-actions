@@ -35,9 +35,9 @@ Let's start off by installing [Zod](https://zod.dev/) in your action project.
 1. Replace the contents of your `src/rateJoke.js` file.
 
    ```js
-   const OpenAI = require("openai");
-   const { zodResponseFormat } = require("openai/helpers/zod");
-   const { z } = require("zod");
+   import OpenAI from "openai";
+   import { zodResponseFormat } from "openai/helpers/zod";
+   import { z } from "zod";
 
    // Define the structured output format using Zod schema
    const JokeRatingSchema = z.object({
@@ -76,7 +76,7 @@ Let's start off by installing [Zod](https://zod.dev/) in your action project.
      return completion.choices[0]?.message?.parsed;
    }
 
-   module.exports = { rateJoke };
+   export { rateJoke };
    ```
 
    This looks very similar to your previous implementation, but now includes the Zod schema definition and uses it for structured outputs from the AI model.
