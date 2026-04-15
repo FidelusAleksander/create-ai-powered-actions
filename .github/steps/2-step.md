@@ -26,7 +26,7 @@ Let's create the source files and implement the logic for your action.
 1. Create `src/rateJoke.js` file to hold the logic for communicating with GitHub Models and rating jokes:
 
    ```js
-   const OpenAI = require("openai");
+   import OpenAI from "openai";
 
    async function rateJoke(joke, token) {
      const endpoint = "https://models.github.ai/inference";
@@ -53,7 +53,7 @@ Let's create the source files and implement the logic for your action.
      return response.choices[0].message.content;
    }
 
-   module.exports = { rateJoke };
+   export { rateJoke };
    ```
 
    The `rateJoke` function initializes an OpenAI client configured for GitHub Models endpoint and sends the joke to an AI model for evaluation.
@@ -63,8 +63,8 @@ Let's create the source files and implement the logic for your action.
 1. Create `src/main.js` that will be the main logic for the action:
 
    ```js
-   const { rateJoke } = require("./rateJoke");
-   const core = require("@actions/core");
+   import { rateJoke } from "./rateJoke.js";
+   import * as core from "@actions/core";
 
    async function run() {
      // Get inputs
@@ -78,7 +78,7 @@ Let's create the source files and implement the logic for your action.
      core.setOutput("result", rating);
    }
 
-   module.exports = { run };
+   export { run };
    ```
 
    The `run` function retrieves the action inputs, calls the `rateJoke` function to get the AI-generated rating, and sets the output for the action.
@@ -86,7 +86,7 @@ Let's create the source files and implement the logic for your action.
 1. Create `src/index.js` that will be the main entrypoint for the action:
 
    ```js
-   const { run } = require("./main");
+   import { run } from "./main.js";
 
    run();
    ```
